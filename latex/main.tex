@@ -1,0 +1,76 @@
+\documentclass[letterpaper]{article}
+
+% font settings
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+
+% essential packages
+\usepackage[boxed]{ticket} %when ready to print, remove the "boxed" option
+\usepackage[usenames]{xcolor}
+\usepackage{graphicx} % provides \includegraphics
+\usepackage{adjustbox} % provides \maxsizebox 
+
+%% use contour for highlighting
+%\usepackage[outline]{contour} 
+%\contourlength{5pt}
+%\newcommand*{\highlight}{\contour}
+%% or just use colored text for highlighting
+\newcommand*{\highlight}{\textcolor}
+
+% other useful commands
+\newcommand*{\cbox}[1]{\makebox[0pt]{\maxsizebox{3.8in}{!}{#1}}}
+\newcommand*{\HUGE}{\fontsize{64pt}{0pt}\selectfont}
+
+% page setting
+\hoffset=-0.75in
+\voffset=-0.125in
+\unitlength=0.01in
+\ticketSize{400}{300} % in unitlength
+\ticketDistance{0}{0} %in unitlength
+\ticketNumbers{2}{3}
+
+% ticket default setting
+\renewcommand*{\ticketdefault}{%
+  \put( 90,10){\includegraphics[width=1in]{desc-logo}}%
+  \put(210,50){{\scriptsize LSST DESC Hack Week}}%
+  \put(210,35){{\scriptsize November 7--11, 2016}}%
+  \put(210,20){{\scriptsize CMU, Pittsburgh, PA}}%
+}
+
+% participant style setting
+\newcommand*{\participant}[5]{\ticket{%
+  \put(200,204){\cbox{#5{\bfseries\HUGE #1}}}%
+  \put(200,155){\cbox{#5{\bfseries\Huge #2}}}%
+  \put(200,115){\cbox{\Large #3}}%
+  \put(200, 85){\cbox{\large (#4)}}%
+}}
+
+% empty ticket (with background)
+\newcommand*{\emptyticket}{\ticket{}}
+
+% LOC highlight format
+\newcommand*{\loc}{\highlight{orange}}
+\newcommand*{\local}{\highlight{orange}}
+
+% backside (comment out for front side)
+%\hoffset=1.1in
+%\backside
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% insert below the participant list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\participant{Kori}{Ketner}{Massachusetts Institute of Technology}{they/them/their}{\loc}
+\participant{Rosamond}{Rachal}{Stanford University}{she/her/her}{}
+\participant{Long}{Lakes}{Yale University}{he/him/his}{\local}
+\participant{Lyndon}{Lipscomb}{Pomona College}{he/him/his}{\local}
+\participant{Larisa}{Lage}{Brown University}{they/them/their}{}
+\participant{Phil}{Parnell}{Williams College}{they/them/their}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of the participant list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% empty tickets below
+%\emptyticket{}
+%\emptyticket{}
+\end{document}
