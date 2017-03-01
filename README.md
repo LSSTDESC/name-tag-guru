@@ -5,7 +5,7 @@ LaTeX template to quickly create beautiful name tags for collaboration meetings
 
 - Use your favoraite spreadsheet app to create a list of string of
   ```latex
-  \participant{First Name}{Last Name}{Insititute}{Preferred pronouns}{\highlight}
+  \participant{First Name}{Last Name}{Insititute}{Personal pronouns}{\highlight}
   ```
   and copy and paste to the LaTeX template `latex/main.tex`.
 
