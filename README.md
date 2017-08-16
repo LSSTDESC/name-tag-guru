@@ -59,6 +59,6 @@ LaTeX template to quickly create beautiful name tags (badges) for collaboration 
 
 This template is designed and implemented by [Yao-Yuan Mao](https://yymao.github.io),
 with helpful suggestions contributed by
-Alex Kim, Rachel Mandelbaum, Phil Marshall, Michael Wood-Vasey and Anže Slosar.
+Alex Kim, Rachel Mandelbaum, Phil Marshall, Anže Slosar, and Michael Wood-Vasey.
 
 
