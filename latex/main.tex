@@ -3,8 +3,8 @@
 %% To include CJK character, one needs to use xelatex to compile
 %% and also to have a CJK font installed (current set to `Noto Sans CJK TC`)
 %% Otherwise, comment out the following two lines.  
-\usepackage{xeCJK}
-\setCJKmainfont{Noto Sans CJK TC}
+%\usepackage{xeCJK}
+%\setCJKmainfont{Noto Sans CJK TC}
 
 %% basic font settings
 \usepackage[T1]{fontenc} 
@@ -28,10 +28,11 @@
 
 %% other useful commands
 \newcommand*{\cbox}[1]{\makebox[0pt]{\maxsizebox{3.8in}{!}{#1}}}
-\newcommand*{\lbox}[1]{\makebox[0pt][l]{\maxsizebox{2.8in}{!}{#1}}}
-\newcommand*{\pbox}[1]{\parbox[b]{2.8in}{\raggedright #1}}
-\newcommand*{\rbox}[1]{\makebox[0pt][r]{\maxsizebox{1in}{!}{#1}}}
-\newcommand*{\HUGE}{\fontsize{64pt}{0pt}\selectfont}
+\newcommand*{\lbox}[1]{\makebox[0pt][l]{\maxsizebox{3.8in}{!}{#1}}}
+\newcommand*{\rbox}[1]{\makebox[0pt][r]{\maxsizebox{3.8in}{!}{#1}}}
+\newcommand*{\largefont}{\fontsize{68pt}{0pt}\selectfont}
+\newcommand*{\smallfont}{\fontsize{26pt}{0pt}\selectfont}
+\newcommand*{\infofont}{\fontsize{22pt}{0pt}\selectfont}
 
 %% page setting, currently set to match Avery Name Badges #74459
 \hoffset=-0.75in %adjusting page margin
@@ -43,18 +44,18 @@
 
 %% ticket default setting
 \renewcommand*{\ticketdefault}{%
-  \put(385,65){\rbox{\includegraphics[width=0.75in]{desc-logo}}}%
-  \put(385,45){\rbox{\includegraphics[width=0.52in]{lsstc-logo}}}%
-  \put(385,30){\rbox{\latinfont\scriptsize SLAC, Menlo Park, CA}}%
-  \put(385,15){\rbox{\latinfont\scriptsize Feb 7--11, 2017}}% 
+  \put(10,2){\lbox{\includegraphics[width=1in]{desc-logo}}}%
+  \put(380,14){\rbox{\includegraphics[width=0.7in]{lsstc-logo}}}%
+  \put(205,29){\cbox{\latinfont\scriptsize Collaboration Meeting, Feb.~5--9, 2018}}% 
+  \put(205,15){\cbox{\latinfont\scriptsize SLAC National Accelerator Laboratory}}%
 }
 
 %% participant style setting
 \newcommand*{\participant}[5]{\ticket{%
-  \put(200,200){\cbox{#5{\latinfont\bfseries\HUGE #1}}}%
-  \put(200,140){\cbox{\latinfont\Huge #2}}%
-  \put(20,60){\pbox{\latinfont\LARGE #3}}%
-  \put(20,25){\lbox{\latinfont\LARGE\itshape #4}}%
+  \put(200,210){\cbox{#5{\latinfont\bfseries\largefont #1}}}%
+  \put(200,155){\cbox{#5{\latinfont\bfseries\smallfont #2}}}%
+  \put(200,106){\cbox{\latinfont\infofont #3}}%
+  \put(200,62){\cbox{\latinfont\itshape\infofont #4}}%
 }}
 
 %% empty ticket (with background)
@@ -75,7 +76,7 @@
 \participant{LFBadgeName}{Small-font Badge Name}{Affiliation}{Pronoun}{}
 \participant{Michael}{Wood-Vasey}{University of Pittsburgh}{he/him}{}
 \emptyticket{}
-\participant{Yao}{Yao-Yuan Mao (茅耀元)}{University of Pittsburgh}{he/him}{}
+\participant{Yao}{Yao-Yuan Mao}{University of Pittsburgh}{he/him}{}
 \participant{WhenYourNameIsLong}{When Your Name Is Really Long}{Lawrence Berkeley National Laboratory}{Pronoun}{}
 \emptyticket{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
