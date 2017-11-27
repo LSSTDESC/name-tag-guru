@@ -25,7 +25,7 @@ LaTeX template to quickly create beautiful name tags (badges) for collaboration 
   \newcommand*{\loc}{\highlight{orange}}
   ```
 
-- To include CJK character, one needs to compile with `xelatex`. A CJK font is also required (current set to `Noto Sans CJK TC`). To drop CJK support, comment out the following two lines:
+- To include CJK character, uncomment the following two lines. One also needs to compile with `xelatex`. A CJK font is also required (current set to `Noto Sans CJK TC`). 
   ```latex
   \usepackage{xeCJK}
   \setCJKmainfont{Noto Sans CJK TC}
