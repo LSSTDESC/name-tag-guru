@@ -3,7 +3,7 @@ LaTeX template to quickly create beautiful name tags (badges) for collaboration 
 
 ## Preview
 
-You can preview how your badge would look like [on this page](https://lsstdesc.github.io/name-tag-guru/index).
+You can preview how your badge would look like [on this page](https://lsstdesc.github.io/name-tag-guru/).
 
 ## Usage
 
