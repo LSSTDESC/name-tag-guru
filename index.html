@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LSST DESC Meeting Badge Preview</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+  <style>
+    span {
+      font-family: "Raleway", sans-serif;
+    }
+
+    body > div {
+      width: 4in;
+      margin: 0.6in auto;
+    }
+
+    #input div {
+      width: 100%;
+      margin: 0.05in 0;
+    }
+
+    #input label {
+      display: inline-block;
+      width: 1.4in;
+      text-align: right;
+    }
+
+    #input input {
+      width: 2.4in;
+      padding: 0.04in;
+    }
+
+    input:invalid {
+      border: 2px dashed red;
+    }
+
+    #badge {
+      position: relative;
+      width: 4in;
+      height: 3in;
+      border: 1px solid black;
+    }
+
+    #badge div {
+      white-space: nowrap;
+      text-align: center;
+      width: 4in;
+      position: absolute;
+      line-height: 0.8;
+    }
+
+    #lname-d {
+      font-size: 68pt;
+      font-weight: bold;
+      bottom: 2.05in;
+    }
+
+    #sname-d {
+      font-size: 26pt;
+      font-weight: bold;
+      bottom: 1.55in;
+    }
+
+    #affili-d,
+    #pronoun-d {
+      font-size: 22pt;
+      bottom: 1.08in;
+    }
+
+    #pronoun-d {
+      font-style: italic;
+      bottom: 0.64in;
+    }
+
+    #event-d,
+    #location-d {
+      font-size: 7pt;
+      bottom: 0.29in;
+      left: 0.02in;
+    }
+
+    #location-d {
+      bottom: 0.15in;
+    }
+
+    .local {
+      color: orange;
+    }
+
+    #logo1 {
+      width: 92px !important;
+      height: 61px;
+      background-image: url('web-static/desc-logo.png');
+      bottom: 0.02in;
+      left: 0.1in;
+    }
+
+    #logo2 {
+      width: 64px !important;
+      height: 22px;
+      background-image: url('web-static/lsstc-logo.png');
+      bottom: 0.15in;
+      right: 0.2in;
+    }
+
+    .footer{
+      font-size: 80%;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="input">
+    <h3>Preview your LSST DESC meeting badge</h3>
+    <div>
+      <label for="lname">Large-font Name</label>
+      <input type="text" value="Uhura" id="lname" required>
+    </div>
+    <div>
+      <label for="sname">Small-font Name</label>
+      <input type="text" value="Nyota Uhura" id="sname" required>
+    </div>
+    <div>
+      <label for="affili">Affiliation</label>
+      <input type="text" value="Starfleet" id="affili" required>
+    </div>
+    <div>
+      <label for="pronoun">Pronoun</label>
+      <input type="text" value="she/human" id="pronoun" required>
+    </div>
+    <div>
+      <label for="event">Event</label>
+      <input type="text" value="Collaboration Meeting, Feb. 5-9, 2018" id="event" required>
+    </div>
+    <div>
+      <label for="location">Location</label>
+      <input type="text" value="SLAC National Accelerator Laboratory" id="location" required>
+    </div>
+    <div>
+      <label for="local">Is local?</label>
+      <input type="checkbox" id="local">
+    </div>
+  </div>
+
+  <div id="badge">
+    <div id="lname-d">
+      <span id="lname-s"></span>
+    </div>
+    <div id="sname-d">
+      <span id="sname-s"></span>
+    </div>
+    <div id="affili-d">
+      <span id="affili-s"></span>
+    </div>
+    <div id="pronoun-d">
+      <span id="pronoun-s"></span>
+    </div>
+    <div id="event-d">
+      <span id="event-s"></span>
+    </div>
+    <div id="location-d">
+      <span id="location-s"></span>
+    </div>
+    <div id="logo1" class="logo"></div>
+    <div id="logo2" class="logo"></div>
+  </div>
+
+  <div class="footer">
+    This page and the template are designed by <a href="https://yymao.github.com/">Yao-Yuan Mao</a>. <br>
+    A LaTeX template that implements this badge design can be found in <a href="https://github.com/LSSTDESC/name-tag-guru/">this GitHub repo</a>.
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script>
+    $("input").keyup(function () {
+      var target = $("#" + $(this).attr("id") + "-s");
+      target.text($(this).val());
+      target.css("font-size", "100%");
+      var scale = 370.0 / target.width();
+      if (scale < 1) {
+        target.css("font-size", (scale * 100).toString() + "%");
+      }
+    });
+    $("#local").change(function () {
+      $("#lname-s").toggleClass("local");
+      $("#sname-s").toggleClass("local");
+    })
+    $("input").keyup();
+  </script>
+</body>
+
+</html>

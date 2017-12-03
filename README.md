@@ -1,6 +1,10 @@
 # name-tag-guru
 LaTeX template to quickly create beautiful name tags (badges) for collaboration meetings
 
+## Preview
+
+You can preview how your badge would look like [on this page](https://lsstdesc.github.io/name-tag-guru/index).
+
 ## Usage
 
 - Use your favorite spreadsheet app (e.g., Excel) to create a list of string of
@@ -25,7 +29,7 @@ LaTeX template to quickly create beautiful name tags (badges) for collaboration 
   \newcommand*{\loc}{\highlight{orange}}
   ```
 
-- To include CJK character, uncomment the following two lines. One also needs to compile with `xelatex`. A CJK font is also required (current set to `Noto Sans CJK TC`). 
+- To include CJK character, uncomment the following two lines. One also needs to compile with `xelatex`. A CJK font is also required (current set to `Noto Sans CJK TC`).
   ```latex
   \usepackage{xeCJK}
   \setCJKmainfont{Noto Sans CJK TC}
