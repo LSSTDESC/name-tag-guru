@@ -1,4 +1,4 @@
-\documentclass[letterpaper]{article}
+\documentclass[letterpaper,10pt]{article}
 
 %% To include CJK character, one needs to use xelatex to compile
 %% and also to have a CJK font installed (current set to `Noto Sans CJK TC`)
@@ -61,8 +61,8 @@
 %% empty ticket (with background)
 \newcommand*{\emptyticket}{\ticket{}}
 
-%% LOC or other highlight commands
-\newcommand*{\loc}{\highlight{orange}}
+%% local people or other highlight commands
+\newcommand*{\local}{\highlight{orange}}
 
 %% backside printing (comment out for front side)
 %\hoffset=1.1in
@@ -73,11 +73,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % insert below the participant list
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\participant{LFBadgeName}{Small-font Badge Name}{Affiliation}{Pronoun}{}
-\participant{Michael}{Wood-Vasey}{University of Pittsburgh}{he/him}{}
+\participant{Large-font Name}{Small-font Name}{Affiliation}{Pronoun}{}
+\participant{Uhura}{Nyota Uhura}{Starfleet}{she/human}{}
 \emptyticket{}
-\participant{Yao}{Yao-Yuan Mao}{University of Pittsburgh}{he/him}{}
-\participant{WhenYourNameIsLong}{When Your Name Is Really Long}{Lawrence Berkeley National Laboratory}{Pronoun}{}
+\participant{Jim}{Kirk}{Starfleet}{he}{\local}
+\participant{Bones}{Leonard McCoy}{Starfleet}{he/Doctor}{}
 \emptyticket{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % end of the participant list
