@@ -209,6 +209,10 @@
       const keys = ['lname', 'sname', 'affili', 'pronoun'];
       if (keys.reduce((accumulator, currentValue) => accumulator || searchParams.has(currentValue), false)) keys.forEach(function (currentValue) { $("#" + currentValue).val(searchParams.has(currentValue) ? searchParams.get(currentValue) : ""); });
       ['event', 'location'].forEach(function (currentValue) { if (searchParams.has(currentValue)) $("#" + currentValue).val(searchParams.get(currentValue)); });
+      if(searchParams.get('local')) {
+        $("#local").prop('checked', true);
+        $("#local").change();
+      }
     }
     load_params();
     $("input").keyup();
