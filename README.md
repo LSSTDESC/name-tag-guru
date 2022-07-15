@@ -59,6 +59,26 @@ You can preview how your badge would look like [on this page](https://lsstdesc.g
   Leave the `boxed` option on to see how the badges would look like.
 
 
+## Automated badge generation from registration database
+
+We provide a script that can automagically query the registration database from 
+the [meetings-registration-form](https://github.com/LSSTDESC/meeting-registration-form)
+repository to generate a `participants.tex` file.
+To install the `sqlalchemy` requirement:
+```
+$ pip install sqlalchemy
+```
+Then copy the secret heroku database URL from the settings tab of the Heroku service 
+into a `db_secret` file at the root of this repo. Be careful not to commit or share this
+file!
+Finally, run the following command at the root of this repo:
+```
+$ python badges_from_db.py
+```
+And that's it, you now have a `participants.tex` file in the `latex` folder, ready to be
+processed.
+
+
 ## Contributers
 
 This template is designed and implemented by [Yao-Yuan Mao](https://yymao.github.io),
